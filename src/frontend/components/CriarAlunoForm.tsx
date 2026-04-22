@@ -1,28 +1,32 @@
 // src/frontend/components/CriarAlunoForm.tsx  
-  
-import React, { useState } from 'react';  
-import { CriarAlunoDTO } from '../../shared/types/aluno.types.js';  
-import { AlunoService } from '../services/alunoService.js'; 
-  
-const CriarAlunoForm: React.FC = () => {  
-  const [formData, setFormData] = useState<CriarAlunoDTO>({  
-    nome: '',  
-    cpf: '',  
-    email: '',  
-  });  
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);  
-  const [successMessage, setSuccessMessage] = useState('');  
-  const [errorMessage, setErrorMessage] = useState(''); 
-  
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {  
-    const { name, value } = e.target;  
-    setFormData(prev => ({  
-      ...prev,  
-      [name]: value,  
-    }));  
-  }; 
-  
+
+import React, { useState } from 'react';
+import { CriarAlunoDTO } from '../../shared/types/aluno.types.js';
+import { AlunoService } from '../services/alunoService.js';
+
+interface CriarAlunoFormProps {
+  onSuccess: () => void;
+}
+
+const CriarAlunoForm: React.FC<CriarAlunoFormProps> = ({ onSuccess }) => {
+  const [formData, setFormData] = useState<CriarAlunoDTO>({
+    nome: '',
+    cpf: '',
+    email: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -33,6 +37,7 @@ const CriarAlunoForm: React.FC = () => {
       await AlunoService.criar(formData);
       setSuccessMessage('Aluno criado com sucesso!');
       setFormData({ nome: '', cpf: '', email: '' });
+      onSuccess();
     } catch (error: any) {
       setErrorMessage(error.message);
     } finally {

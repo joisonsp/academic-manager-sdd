@@ -1,3 +1,12 @@
 {
-  "alunos": []
+  "alunos": [
+    {
+      "id": "2c3a5d34-3959-427e-a6ed-8ca6c45ace01",
+      "nome": "Joison Oliveira",
+      "cpf": "12345678910",
+      "email": "joisonsp60@gmail.com",
+      "criadoEm": "2026-04-22T10:57:19.579Z",
+      "atualizadoEm": "2026-04-22T10:57:19.579Z"
+    }
+  ]
 }
