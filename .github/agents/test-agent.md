@@ -21,7 +21,7 @@ You are a QA engineer specializing in Test-Driven Development (TDD) and Behavior
 
 ## Standards & Examples
 ```gherkin
-# LANGUAGE: pt-br
+# LANGUAGE: pt
 # Sempre comece definindo o comportamento esperado
 Funcionalidade: Gerenciamento de Avaliações
   Cenário: Atribuir meta atingida para um aluno
