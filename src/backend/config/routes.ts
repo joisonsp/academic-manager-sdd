@@ -9,5 +9,7 @@ const controller = new AlunoController();
 router.get('/api/alunos', (req, res) => controller.listar(req, res));
 router.get('/api/alunos/:id', (req, res) => controller.buscarPorId(req, res));
 router.post('/api/alunos', (req, res) => controller.criar(req, res));
+router.put('/api/alunos/:id', (req, res) => controller.atualizar(req, res));
+router.delete('/api/alunos/:id', (req, res) => controller.remover(req, res));
 
 export default router;

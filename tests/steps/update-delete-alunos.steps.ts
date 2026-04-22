@@ -3,16 +3,9 @@
 import { When, Then, DataTable } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import axios from 'axios';
-import type { AxiosResponse } from 'axios';
+import { sharedContext as context } from '../helpers/step-context.ts';
 
 const API_URL = 'http://localhost:3000';
-
-interface StepContext {
-    response?: AxiosResponse<any>;
-    error?: any;
-}
-
-const context: StepContext = {};
 
 When('eu atualizar o aluno com ID {string} com os dados:', async function (id: string, dataTable: DataTable) {
     const dados = dataTable.hashes()[0];

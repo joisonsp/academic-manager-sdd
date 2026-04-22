@@ -1,6 +1,6 @@
 // src/backend/services/AlunoService.ts
 
-import { CriarAlunoDTO, Aluno } from '../../shared/types/aluno.types.js';
+import { CriarAlunoDTO, AtualizarAlunoDTO, Aluno } from '../../shared/types/aluno.types.js';
 import { AlunoValidator } from '../validators/AlunoValidator.js';
 import { AlunoRepository } from '../repositories/AlunoRepository.js';
 
@@ -32,6 +32,33 @@ export class AlunoService {
     }
 
     return aluno;
+  }
+
+  async atualizar(id: string, dados: AtualizarAlunoDTO): Promise<Aluno> {
+    if (!this.isValidUUID(id)) {
+      throw new Error('ID inválido');
+    }
+
+    const existente = await this.repository.buscarPorId(id);
+    if (!existente) {
+      throw new Error('Aluno não encontrado');
+    }
+
+    await this.validator.validarAtualizacao(id, dados);
+
+    const atualizado = await this.repository.atualizar(id, dados);
+    return atualizado!;
+  }
+
+  async remover(id: string): Promise<void> {
+    if (!this.isValidUUID(id)) {
+      throw new Error('ID inválido');
+    }
+
+    const removido = await this.repository.remover(id);
+    if (!removido) {
+      throw new Error('Aluno não encontrado');
+    }
   }
 
   private isValidUUID(uuid: string): boolean {

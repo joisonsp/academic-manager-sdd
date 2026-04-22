@@ -3,9 +3,9 @@
 import { Given, When, Then, DataTable } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import axios from 'axios';
-import type { AxiosResponse } from 'axios';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { sharedContext as context } from '../helpers/step-context.ts';
 
 const API_URL = 'http://localhost:3000';
 const ALUNOS_FILE = path.join(process.cwd(), 'data', 'alunos.json');
@@ -18,16 +18,6 @@ interface Aluno {
     criadoEm: string;
     atualizadoEm: string;
 }
-
-interface StepContext {
-    response?: AxiosResponse<any>;
-    error?: any;
-    currentId?: string;
-    listaAlunos?: Aluno[];
-}
-
-// Estado compartilhado entre steps
-const context: StepContext = {};
 
 // Auxiliar para ler alunos do arquivo
 async function lerAlunos(): Promise<Aluno[]> {

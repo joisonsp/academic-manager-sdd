@@ -34,6 +34,26 @@ export class AlunoController {
     }
   }
 
+  async atualizar(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const aluno = await this.service.atualizar(id, req.body);
+      res.status(200).json(aluno);
+    } catch (erro) {
+      this.handleError(res, erro);
+    }
+  }
+
+  async remover(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      await this.service.remover(id);
+      res.status(200).json({ mensagem: 'Aluno removido com sucesso' });
+    } catch (erro) {
+      this.handleError(res, erro);
+    }
+  }
+
   private handleError(res: Response, erro: unknown): void {
     const message = erro instanceof Error ? erro.message : 'Erro desconhecido';
 
