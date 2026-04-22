@@ -10,6 +10,7 @@
         "test:consultation": "cucumber-js tests/features/alunos-consulta.feature --import tsx --import tests/steps/**/*.ts",
         "test:update-delete": "cucumber-js tests/features/alunos-update-delete.feature --import tsx --import tests/steps/**/*.ts",
         "test:turmas": "cucumber-js tests/features/turmas-avaliacoes.feature --import tsx --import tests/steps/**/*.ts",
+        "test:notificacoes": "cucumber-js tests/features/notificacoes.feature --import tsx --import tests/steps/**/*.ts",
         "test:watch": "cucumber-js --watch",
         "dev": "tsx src/backend/server.ts",
         "dev:frontend": "vite --host",

@@ -1,20 +1,3 @@
 {
-  "alunos": [
-    {
-      "id": "8bcab560-6aa5-42ed-8e1c-f707e8079999",
-      "nome": "Joao Pedro",
-      "cpf": "12345679011",
-      "email": "abc@example.com",
-      "criadoEm": "2026-04-22T17:27:00.988Z",
-      "atualizadoEm": "2026-04-22T17:27:00.988Z"
-    },
-    {
-      "id": "daf5aa3c-3149-4195-b5db-a4a14e50837e",
-      "nome": "Maria Maria",
-      "cpf": "09876543210",
-      "email": "def@example.com",
-      "criadoEm": "2026-04-22T17:27:57.087Z",
-      "atualizadoEm": "2026-04-22T17:27:57.087Z"
-    }
-  ]
+  "alunos": []
 }
