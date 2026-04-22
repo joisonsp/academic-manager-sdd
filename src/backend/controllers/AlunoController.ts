@@ -15,10 +15,33 @@ export class AlunoController {
     }
   }
 
+  async listar(req: Request, res: Response): Promise<void> {
+    try {
+      const alunos = await this.service.listar();
+      res.status(200).json(alunos);
+    } catch (erro) {
+      this.handleError(res, erro);
+    }
+  }
+
+  async buscarPorId(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const aluno = await this.service.buscarPorId(id);
+      res.status(200).json(aluno);
+    } catch (erro) {
+      this.handleError(res, erro);
+    }
+  }
+
   private handleError(res: Response, erro: unknown): void {
     const message = erro instanceof Error ? erro.message : 'Erro desconhecido';
 
-    if (message.includes('já cadastrado') || message.includes('já existe')) {
+    if (message === 'Aluno não encontrado') {
+      res.status(404).json({ erro: message });
+    } else if (message === 'ID inválido') {
+      res.status(400).json({ erro: message });
+    } else if (message.includes('já cadastrado') || message.includes('já existe')) {
       res.status(409).json({ erro: message });
     } else if (message.includes('obrigatório') || message.includes('inválido') || message.includes('deve ter') || message.includes('deve conter')) {
       res.status(400).json({ erro: message });

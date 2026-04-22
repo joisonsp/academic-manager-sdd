@@ -39,6 +39,15 @@ export class AlunoRepository {
     return alunos.some(a => a.email === email);
   }
 
+  async listar(): Promise<Aluno[]> {
+    return this.obterTodos();
+  }
+
+  async buscarPorId(id: string): Promise<Aluno | null> {
+    const alunos = await this.obterTodos();
+    return alunos.find(a => a.id === id) || null;
+  }
+
   private async obterTodos(): Promise<Aluno[]> {
     try {
       const conteudo = await fs.readFile(ALUNOS_FILE, 'utf-8');
