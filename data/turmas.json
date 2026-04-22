@@ -1,3 +1,31 @@
 {
-  "turmas": []
+  "turmas": [
+    {
+      "id": "41fd6c04-468e-4af4-a5a6-b0b28f93c707",
+      "topico": "teste",
+      "ano": 2026,
+      "semestre": 1,
+      "alunos": [
+        {
+          "alunoId": "fd4b1fc6-4039-4605-9a80-093582ff5e6e",
+          "avaliacoes": [
+            {
+              "meta": "Requisitos",
+              "conceito": "MANA"
+            },
+            {
+              "meta": "Testes",
+              "conceito": "MA"
+            },
+            {
+              "meta": "UI",
+              "conceito": "MANA"
+            }
+          ]
+        }
+      ],
+      "criadoEm": "2026-04-22T17:52:25.297Z",
+      "atualizadoEm": "2026-04-22T17:55:30.632Z"
+    }
+  ]
 }

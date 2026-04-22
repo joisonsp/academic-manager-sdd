@@ -5,6 +5,7 @@ import CriarAlunoForm from './components/CriarAlunoForm.js';
 import GerenciarTurmas from './components/GerenciarTurmas.js';
 import ListaAlunos from './components/ListaAlunos.js';
 import type { Aluno } from '../shared/types/aluno.types.js';
+import { NotificacaoService } from './services/notificacaoService.js';
 
 type Aba = 'alunos' | 'turmas';
 
@@ -16,10 +17,30 @@ interface TabBarProps {
 }
 
 const TabBar: React.FC<TabBarProps> = ({ aba, onChange }) => {
+  const [processando, setProcessando] = useState(false);
+
   const tabs: { key: Aba; label: string }[] = [
     { key: 'alunos', label: 'Alunos' },
     { key: 'turmas', label: 'Turmas' },
   ];
+
+  const handleProcessarEmails = async (): Promise<void> => {
+    setProcessando(true);
+    try {
+      const resultado = await NotificacaoService.processarBatch();
+      if ('totalEnvios' in resultado) {
+        window.alert(
+          `✅ ${resultado.totalEnvios} e-mail(s) consolidado(s) enviado(s)!\nVerifique o console do backend para os detalhes.`
+        );
+      } else {
+        window.alert('📭 Nenhuma notificação pendente.');
+      }
+    } catch {
+      window.alert('❌ Erro ao processar notificações. Verifique se o servidor está rodando.');
+    } finally {
+      setProcessando(false);
+    }
+  };
 
   return (
     <header className="bg-white shadow-sm">
@@ -28,7 +49,7 @@ const TabBar: React.FC<TabBarProps> = ({ aba, onChange }) => {
           <span className="mr-4 text-lg font-bold text-indigo-700 tracking-tight">
             Gestão Acadêmica
           </span>
-          <nav className="flex">
+          <nav className="flex flex-1">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
@@ -43,6 +64,29 @@ const TabBar: React.FC<TabBarProps> = ({ aba, onChange }) => {
               </button>
             ))}
           </nav>
+          <button
+            onClick={handleProcessarEmails}
+            disabled={processando}
+            className="ml-auto flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 active:bg-amber-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors shadow-sm"
+          >
+            {processando ? (
+              <>
+                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                </svg>
+                Processando...
+              </>
+            ) : (
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                Simular Virada do Dia (Processar E-mails)
+              </>
+            )}
+          </button>
         </div>
       </div>
     </header>

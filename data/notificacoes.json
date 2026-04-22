@@ -1,34 +1,3 @@
 {
-  "fila": [
-    {
-      "alunoId": "660e8400-e29b-41d4-a716-446655440010",
-      "alunoNome": "Aluno de Teste",
-      "alunoEmail": "aluno-660e8400@example.com",
-      "meta": "Requisitos",
-      "conceitoNovo": "MANA",
-      "turmaTopico": "Turma de Teste",
-      "id": "0ab95858-7918-4db1-8f20-88f9ea6f7b51",
-      "criadoEm": "2026-04-22T17:47:20.773Z"
-    },
-    {
-      "alunoId": "660e8400-e29b-41d4-a716-446655440011",
-      "alunoNome": "",
-      "alunoEmail": "",
-      "meta": "Testes",
-      "conceitoNovo": "MPA",
-      "turmaTopico": "Turma de Teste",
-      "id": "97de62ce-f4d2-4167-859a-1a42f5c451b7",
-      "criadoEm": "2026-04-22T17:47:20.800Z"
-    },
-    {
-      "alunoId": "660e8400-e29b-41d4-a716-446655440012",
-      "alunoNome": "",
-      "alunoEmail": "",
-      "meta": "Requisitos",
-      "conceitoNovo": "MA",
-      "turmaTopico": "Turma de Teste",
-      "id": "c81b0edc-ac75-4ebf-b02b-6ec2451eff35",
-      "criadoEm": "2026-04-22T17:47:20.825Z"
-    }
-  ]
+  "fila": []
 }
