@@ -3,10 +3,12 @@
 import { Router } from 'express';
 import { AlunoController } from '../controllers/AlunoController.js';
 import { TurmaController } from '../controllers/TurmaController.js';
+import { NotificacaoController } from '../controllers/NotificacaoController.js';
 
 const router = Router();
 const alunoController = new AlunoController();
 const turmaController = new TurmaController();
+const notificacaoController = new NotificacaoController();
 
 // Rotas de Alunos
 router.get('/api/alunos', (req, res) => alunoController.listar(req, res));
@@ -25,5 +27,8 @@ router.delete('/api/turmas/:id', (req, res) => turmaController.remover(req, res)
 // Rotas de Turmas — Matrículas e Avaliações
 router.post('/api/turmas/:id/alunos', (req, res) => turmaController.matricularAluno(req, res));
 router.put('/api/turmas/:id/avaliacoes', (req, res) => turmaController.registrarAvaliacao(req, res));
+
+// Rotas de Notificações
+router.post('/api/notificacoes/processar', (req, res) => notificacaoController.processar(req, res));
 
 export default router;

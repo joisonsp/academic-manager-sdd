@@ -10,9 +10,13 @@ import {
   Conceito,
 } from '../../shared/types/turma.types.js';
 import { TurmaRepository } from '../repositories/TurmaRepository.js';
+import { AlunoRepository } from '../repositories/AlunoRepository.js';
+import { NotificacaoRepository } from '../repositories/NotificacaoRepository.js';
 
 export class TurmaService {
   private repository = new TurmaRepository();
+  private alunoRepository = new AlunoRepository();
+  private notificacaoRepository = new NotificacaoRepository();
 
   async criar(dados: CriarTurmaDTO): Promise<Turma> {
     if (!dados.topico || dados.topico.trim() === '') {
@@ -94,6 +98,21 @@ export class TurmaService {
       meta: dados.meta,
       conceito: dados.conceito as Conceito,
     });
+
+    // Enfileira notificação de forma não-bloqueante (falha silenciosa para não quebrar a avaliação)
+    try {
+      const aluno = await this.alunoRepository.buscarPorId(dados.alunoId);
+      await this.notificacaoRepository.adicionarNaFila({
+        alunoId: dados.alunoId,
+        alunoNome: aluno?.nome ?? '',
+        alunoEmail: aluno?.email ?? '',
+        meta: dados.meta,
+        conceitoNovo: dados.conceito as string,
+        turmaTopico: turma.topico,
+      });
+    } catch {
+      // Falha silenciosa — a notificação não deve bloquear o registro da avaliação
+    }
 
     return {
       alunoId: dados.alunoId,
