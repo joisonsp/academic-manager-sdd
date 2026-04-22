@@ -1,0 +1,383 @@
+
+> gestao-academica@1.0.0 test:creation
+> cucumber-js tests/features/alunos-criacao.feature --import tsx --import tests/steps/**/*.ts
+
+This Node.js version (v24.11.1) has not been tested with this version of Cucumber; it should work normally, but please raise an issue if you see anything unexpected.
+
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "João Silva"
+      - CPF: "12345678901"
+      - Email: "joao@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando criação bem-sucedida...
+F----✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "Maria Santos"
+      - CPF: ""
+      - Email: "maria@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F--✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "Pedro Costa"
+      - CPF: "1234567890"
+      - Email: "pedro@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ✓ Aluno com CPF 12345678901 já cadastrado
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "Outro João"
+      - CPF: "12345678901"
+      - Email: "outro@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 409...
+F--✅ Cenário finalizado
+
+  Limpando 1 alunos do arquivo...
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "Ana Silva"
+      - CPF: "11111111111"
+      - Email: ""
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "Carlos Mendes"
+      - CPF: "22222222222"
+      - Email: "email-invalido"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ✓ Aluno com email joao@example.com já cadastrado
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "João Silva II"
+      - CPF: "33333333333"
+      - Email: "joao@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 409...
+F-✅ Cenário finalizado
+
+  Limpando 1 alunos do arquivo...
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: ""
+      - CPF: "44444444444"
+      - Email: "teste@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: "AB"
+      - CPF: "55555555555"
+      - Email: "ab@example.com"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+📋 Iniciando novo cenário de teste...
+.  ✓ Sistema de alunos inicializado
+.  ✓ Arquivo de alunos está vazio
+.  ℹ️  Enviando requisição POST /api/alunos com dados:
+      - Nome: ""
+      - CPF: "123"
+      - Email: "invalido"
+  ℹ️  Status recebido: 503
+.  ✓ Verificando código de erro 400...
+F-✅ Cenário finalizado
+
+.
+
+Failures:
+
+1) Scenario: Criar aluno com dados válidos completos # tests\features\alunos-criacao.feature:17
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor            |
+       | nome  | João Silva       |
+       | cpf   | 12345678901      |
+       | email | joao@example.com |
+   × Então o aluno deve ser criado com sucesso # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:171
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). A backend ainda não foi implementada. Este é o comportamento esperado.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:177:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E o sistema deve retornar um ID gerado automaticamente # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:193
+   - E o aluno deve conter todos os campos preenchidos # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:206
+   - E o campo criadoEm deve ser igual ao campo atualizadoEm # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:224
+   - E o arquivo de alunos deve ter 1 registro # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:238
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+2) Scenario: Rejeitar criação com CPF vazio # tests\features\alunos-criacao.feature:30
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor             |
+       | nome  | Maria Santos      |
+       | cpf   |                   |
+       | email | maria@example.com |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "CPF é obrigatório" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   - E o arquivo de alunos deve permanecer vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:292
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+3) Scenario: Rejeitar criação com CPF de 10 dígitos # tests\features\alunos-criacao.feature:41
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor             |
+       | nome  | Pedro Costa       |
+       | cpf   | 1234567890        |
+       | email | pedro@example.com |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "CPF deve conter 11 dígitos" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+4) Scenario: Rejeitar criação com CPF duplicado # tests\features\alunos-criacao.feature:51
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Dado que um aluno com CPF "12345678901" já existe # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:89
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor             |
+       | nome  | Outro João        |
+       | cpf   | 12345678901       |
+       | email | outro@example.com |
+   × Então a operação deve falhar com código 409 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "CPF já cadastrado" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   - E o total de alunos deve ser 1 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:308
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+5) Scenario: Rejeitar criação com e-mail vazio # tests\features\alunos-criacao.feature:63
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor       |
+       | nome  | Ana Silva   |
+       | cpf   | 11111111111 |
+       | email |             |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "E-mail é obrigatório" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+6) Scenario: Rejeitar criação com e-mail em formato inválido # tests\features\alunos-criacao.feature:73
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor          |
+       | nome  | Carlos Mendes  |
+       | cpf   | 22222222222    |
+       | email | email-invalido |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "E-mail inválido" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+7) Scenario: Rejeitar criação com e-mail duplicado # tests\features\alunos-criacao.feature:83
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Dado que um aluno com email "joao@example.com" já existe # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:109
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor            |
+       | nome  | João Silva II    |
+       | cpf   | 33333333333      |
+       | email | joao@example.com |
+   × Então a operação deve falhar com código 409 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "E-mail já cadastrado" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+8) Scenario: Rejeitar criação com nome vazio # tests\features\alunos-criacao.feature:94
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor             |
+       | nome  |                   |
+       | cpf   | 44444444444       |
+       | email | teste@example.com |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "Nome é obrigatório" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+9) Scenario: Rejeitar criação com nome muito curto # tests\features\alunos-criacao.feature:104
+   √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+   √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+   √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+   √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+       | campo | valor          |
+       | nome  | AB             |
+       | cpf   | 55555555555    |
+       | email | ab@example.com |
+   × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+       Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+           at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+           at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+           at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+           at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+           at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+           at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+           at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+           at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+           at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+   - E a mensagem de erro deve conter "Nome deve ter no mínimo 3 caracteres" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+   √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+10) Scenario: Rejeitar criação com múltiplos campos inválidos # tests\features\alunos-criacao.feature:114
+    √ Before # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:37
+    √ Dado que o sistema de alunos está inicializado # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:71
+    √ E o arquivo de alunos está vazio # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:80
+    √ Quando eu submeto um novo aluno com os seguintes dados: # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:137
+        | campo | valor    |
+        | nome  |          |
+        | cpf   | 123      |
+        | email | invalido |
+    × Então a operação deve falhar com código 400 # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:254
+        Error: ❌ ESPERADO NA FASE RED: API não respondeu (503). Este é o comportamento esperado nesta fase do TDD.
+            at World.<anonymous> (file:///C:/Users/joiso/Desktop/Mestrado/IA+Codigo/Segundo_Experimento/tests/steps/criacao-alunos.steps.ts:259:11)
+            at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\user_code_runner.js:24:27)
+            at Object.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\step_runner.js:51:59)
+            at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+            at async TestCaseRunner.invokeStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:95:16)
+            at async TestCaseRunner.runStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:244:26)
+            at async C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:175:44
+            at async TestCaseRunner.aroundTestStep (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:120:32)
+            at async TestCaseRunner.runAttempt (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:158:13)
+            at async TestCaseRunner.run (C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\node_modules\@cucumber\cucumber\lib\runtime\test_case_runner.js:136:35)
+    - E a mensagem de erro deve conter "Nome é obrigatório" # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:276
+    √ After # file:\C:\Users\joiso\Desktop\Mestrado\IA+Codigo\Segundo_Experimento\tests\steps\criacao-alunos.steps.ts:50
+
+10 scenarios (10 failed)
+57 steps (10 failed, 15 skipped, 32 passed)
+0m00.162s (executing steps: 0m00.108s)
