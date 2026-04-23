@@ -1,7 +1,5 @@
 # Sistema de Gestão Acadêmica
 
-Artefato prático de dissertação de mestrado na intersecção entre Engenharia de Software e Inteligência Artificial.
-
 Este repositório documenta um sistema Full-Stack construído inteiramente por meio da orquestração de Agentes de IA especializados. O objetivo não é apenas o software produzido, mas a metodologia empregada: cada linha de código de produção foi escrita em resposta a um teste de aceitação previamente aprovado e formalizado, seguindo rigorosamente o ciclo **Fase RED (especificação falhando) → Fase GREEN (implementação passando)**.
 
 ---
