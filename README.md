@@ -256,8 +256,3 @@ npm run test:notificacoes
 
 ---
 
-## Contexto Academico
-
-Este projeto e o artefato pratico de uma dissertacao de mestrado que investiga a viabilidade e os limites do desenvolvimento de software guiado inteiramente por Agentes de IA sob supervisao humana. A pergunta central da pesquisa e: em que medida e possivel produzir software de qualidade verificavel — com cobertura de testes, arquitetura consistente e ausencia de regressoes — quando o papel do engenheiro humano se restringe a definir requisitos, revisar especificacoes e orquestrar agentes, sem escrever codigo de producao diretamente?
-
-O repositorio preserva deliberadamente a rastreabilidade entre cada instrucao de requisito e o codigo resultante, servindo como evidencia empirica para a analise da dissertacao.
